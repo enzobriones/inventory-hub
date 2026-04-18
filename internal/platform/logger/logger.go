@@ -46,7 +46,7 @@ func WithTraceID(ctx context.Context, traceID string) context.Context {
 	return context.WithValue(ctx, traceIdKey, traceID)
 }
 
-func TraceIdFrom(ctx context.Context) string {
+func TraceIDFrom(ctx context.Context) string {
 	if v, ok := ctx.Value(traceIdKey).(string); ok {
 		return v
 	}
