@@ -1,0 +1,25 @@
+# Binarios compilados
+bin/
+*.exe
+*.test
+*.out
+
+# Variables de entorno
+.env
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Coverage
+coverage.out
+coverage.html
+
+# Dependencias vendored
+vendor/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
