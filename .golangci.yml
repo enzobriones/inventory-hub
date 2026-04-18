@@ -1,0 +1,24 @@
+run:
+  timeout: 5m
+  tests: true
+
+linters:
+  disable-all: true
+  enable:
+    - errcheck       # errores no chequeados
+    - govet          # suspect constructs (shadowing, etc.)
+    - ineffassign    # assignments que nunca se leen
+    - staticcheck    # checks estáticos varios
+    - unused         # código muerto
+    - gofmt          # formato estándar
+    - goimports      # imports ordenados
+    - revive         # style guide
+    - gosec          # problemas de seguridad
+    - misspell       # typos en comentarios
+    - unconvert      # conversiones innecesarias
+    - unparam        # parámetros sin usar
+    - gocritic       # varios checks de calidad
+
+issues:
+  exclude-dirs:
+    - migrations
