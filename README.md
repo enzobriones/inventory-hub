@@ -6,7 +6,8 @@ Una fuente única de verdad para el stock, con sincronización automática hacia
 múltiples canales de venta (POS, Mercado Libre, Shopify, WhatsApp Business) y
 emisión de documentos tributarios electrónicos (DTE) vía integración con SII.
 
-> 🚧 **Estado**: en desarrollo activo — Fase 0 (fundación) completada.
+> 🚧 **Estado**: en desarrollo activo — Fase 0 completada, Fase 1 en curso (~55%).
+> Contexto completo en [`docs/HANDOFF.md`](./docs/HANDOFF.md).
 
 ## Stack
 
