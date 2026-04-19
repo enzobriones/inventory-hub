@@ -1,3 +1,4 @@
+// Command api es el servidor HTTP del hub de inventario.
 package main
 
 import (

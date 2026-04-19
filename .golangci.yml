@@ -1,24 +1,51 @@
+version: "2"
+
 run:
   timeout: 5m
   tests: true
 
 linters:
-  disable-all: true
+  default: none
   enable:
-    - errcheck       # errores no chequeados
-    - govet          # suspect constructs (shadowing, etc.)
-    - ineffassign    # assignments que nunca se leen
-    - staticcheck    # checks estáticos varios
-    - unused         # código muerto
-    - gofmt          # formato estándar
-    - goimports      # imports ordenados
-    - revive         # style guide
-    - gosec          # problemas de seguridad
-    - misspell       # typos en comentarios
-    - unconvert      # conversiones innecesarias
-    - unparam        # parámetros sin usar
-    - gocritic       # varios checks de calidad
+    - errcheck
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+    - revive
+    - gosec
+    - misspell
+    - unconvert
+    - unparam
+    - gocritic
+  settings:
+    misspell:
+      locale: US
+      ignore-rules:
+        - inventario
+        - producto
+        - productos
+        - cliente
+        - clientes
+        - variante
+        - variantes
+        - catalogo
+        - catálogo
+        - organizacion
+        - organización
+        - ubicacion
+        - ubicación
+        - ubicaciones
+        - tienda
+        - bodega
+        - sucursal
+        - consolidada
+        - aleatorio
+  exclusions:
+    paths:
+      - migrations
 
-issues:
-  exclude-dirs:
-    - migrations
+formatters:
+  enable:
+    - gofmt
+    - goimports

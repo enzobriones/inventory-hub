@@ -1,3 +1,4 @@
+// Command worker es el binario de procesamiento de eventos del hub de inventario.
 package main
 
 import (

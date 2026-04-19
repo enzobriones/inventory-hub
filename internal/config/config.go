@@ -1,3 +1,4 @@
+// Package config carga la configuración de la aplicación desde variables de entorno.
 package config
 
 import (
@@ -24,7 +25,7 @@ type Config struct {
 func Load() (*Config, error) {
 	port, err := strconv.Atoi(getEnv("HTTP_PORT", "8080"))
 	if err != nil {
-		return nil, fmt.Errorf("Invalid HTTP_PORT: %w", err)
+		return nil, fmt.Errorf("invalid HTTP_PORT: %w", err)
 	}
 
 	dbURL, err := requireEnv("DATABASE_URL")

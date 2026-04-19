@@ -42,11 +42,19 @@ func MustMoney(amount int64, currency string) Money {
 	return m
 }
 
-// Accessors: son solo-lectura para preservar inmutabilidad.
-func (m Money) Amount() int64    { return m.amount }
+// Amount devuelve el monto en unidades mínimas (pesos para CLP, centavos para USD).
+func (m Money) Amount() int64 { return m.amount }
+
+// Currency devuelve el código de moneda ISO 4217 (ej: "CLP", "USD").
 func (m Money) Currency() string { return m.currency }
-func (m Money) IsZero() bool     { return m.amount == 0 }
+
+// IsZero indica si el monto es exactamente cero.
+func (m Money) IsZero() bool { return m.amount == 0 }
+
+// IsNegative indica si el monto es estrictamente menor que cero.
 func (m Money) IsNegative() bool { return m.amount < 0 }
+
+// IsPositive indica si el monto es estrictamente mayor que cero.
 func (m Money) IsPositive() bool { return m.amount > 0 }
 
 // Add suma dos montos. Falla si las monedas no coinciden.

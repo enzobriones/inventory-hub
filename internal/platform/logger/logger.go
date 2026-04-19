@@ -1,3 +1,4 @@
+// Package logger provee un logger estructurado compartido por toda la app.
 package logger
 
 import (
@@ -8,7 +9,7 @@ import (
 
 type ctxKey struct{ name string }
 
-var traceIdKey = ctxKey{"trace_id"}
+var traceIDKey = ctxKey{"trace_id"}
 
 // New construye un *slog.Logger configurado según nivel y entorno
 // - development: handler de texto legible
@@ -43,11 +44,12 @@ func New(level, env string) *slog.Logger {
 
 // WithTraceID devuelve un context que lleva el trace ID
 func WithTraceID(ctx context.Context, traceID string) context.Context {
-	return context.WithValue(ctx, traceIdKey, traceID)
+	return context.WithValue(ctx, traceIDKey, traceID)
 }
 
+// TraceIDFrom extrae el trace ID del context, o "" si no hay.
 func TraceIDFrom(ctx context.Context) string {
-	if v, ok := ctx.Value(traceIdKey).(string); ok {
+	if v, ok := ctx.Value(traceIDKey).(string); ok {
 		return v
 	}
 	return ""
